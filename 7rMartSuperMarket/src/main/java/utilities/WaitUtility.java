@@ -16,5 +16,7 @@ public class WaitUtility {
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 		
 	}
+	
+
 
 }

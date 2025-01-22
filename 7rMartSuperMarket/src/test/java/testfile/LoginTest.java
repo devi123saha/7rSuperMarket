@@ -35,7 +35,7 @@ public class LoginTest extends Base {
 	  login.enterUsernameOnField(username).enterPasswordOnField(password);
 	  login.clickOnSignInButton();
 	  boolean isAlertLoaded=login.isAlertDisplayed();
-	  Assert.assertTrue(isAlertLoaded, "login failed");
+	  Assert.assertTrue(isAlertLoaded, Constants.ERRORMESSAGEFORLOGIN);
 	  
   }
   @Test
@@ -46,7 +46,7 @@ public class LoginTest extends Base {
 	login.enterUsernameOnField(username).enterPasswordOnField(password);
 	  login.clickOnSignInButton();
 	  boolean isAlertLoaded=login.isAlertDisplayed();
-	  Assert.assertTrue(isAlertLoaded, "login failed");
+	  Assert.assertTrue(isAlertLoaded, Constants.ERRORMESSAGEFORLOGIN);
 	  
 	  
 	  
@@ -58,7 +58,7 @@ public class LoginTest extends Base {
 	  login.clickOnSignInButton();
 	  String expected="Login | 7rmart supermarket";
 	  String actual=driver.getTitle();
-	  Assert.assertEquals(expected, actual,"login failed");
+	  Assert.assertEquals(expected, actual,Constants.ERRORMESSAGEFORLOGIN);
 	  
   }
   

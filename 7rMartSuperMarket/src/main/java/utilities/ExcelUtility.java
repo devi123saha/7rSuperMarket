@@ -28,7 +28,7 @@ public class ExcelUtility {
 	public static String readIntegerData(int row , int col,String sheet) throws IOException{
 		String file=Constants.TESTDATAFILE;
 		f=new FileInputStream(file);
-		w= new XSSFWorkbook();
+		w= new XSSFWorkbook(f);
 		sh = w.getSheet(sheet);
 		XSSFRow r = sh.getRow(row);
 		XSSFCell c= r.getCell(col);

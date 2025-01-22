@@ -18,8 +18,13 @@ public class HomePage {
 @FindBy(xpath="(//a[@class='small-box-footer'])[1]") private WebElement adminUserClick;
 @FindBy(xpath="(//a[@class='small-box-footer'])[8]") private WebElement manageProductsClick;
 @FindBy(xpath="(//a[@class='small-box-footer'])[9]") private WebElement managenewsClick;
+@FindBy(xpath="(//a[@class='small-box-footer'])[3]") private WebElement categoryclick;
 
 
+public CategoryPage categoryclick() {
+	categoryclick.click();
+	return new CategoryPage(driver);
+}
 
 
 public AdminUsersPage adminsUserClick() {

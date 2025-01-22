@@ -20,7 +20,8 @@ public WebDriver driver;
 	  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
   }
   public void afterMethod() {
-	  driver.close();
+	  //driver.close();
+	  driver.quit();
   }
 
 }

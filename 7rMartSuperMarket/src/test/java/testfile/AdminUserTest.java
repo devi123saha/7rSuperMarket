@@ -6,10 +6,12 @@ import org.testng.annotations.Test;
 import classfile.AdminUsersPage;
 import classfile.HomePage;
 import classfile.LoginPage;
+import utilities.FakerUtility;
 
 public class AdminUserTest extends Base{
 	HomePage home;
 	AdminUsersPage admin;
+	FakerUtility faker = new FakerUtility();
 	
   @Test
   public void newAdminUserCreation() {
@@ -17,7 +19,9 @@ public class AdminUserTest extends Base{
 	  login.enterUsernameOnField("admin").enterPasswordOnField("admin");
 	 home= login.clickOnSignInButton();
 	admin= home.adminsUserClick();
-	admin.newClick().enterUsernameOnField("argjjssxdcfvgjsnsbs").enterPasswordOnField("dffffdcfvbvcxdfghgvc").userTypeDropdown().clickOnSaveButton();
+	String usernamefield = faker.getFakeFirstName();
+	String passwordfield = faker.getPassword();
+	admin.newClick().enterUsernameOnField(usernamefield).enterPasswordOnField(passwordfield).userTypeDropdown().clickOnSaveButton();
 	boolean alertMessage=admin.isAlertDisplayed();
 	Assert.assertTrue(alertMessage, "new user creation is unsuccessful");
 	 }
