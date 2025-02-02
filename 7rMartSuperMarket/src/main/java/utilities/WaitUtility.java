@@ -16,7 +16,29 @@ public class WaitUtility {
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 		
 	}
-	
+	public void waitForElementToClickonSaveButton(WebDriver driver, WebElement element) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+
+	}
+
+	public void waitforElementToClickSearchButton(WebDriver driver, WebElement element) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+
+	}
+
+	public void waitForElementOfClickSearchButtonOfManageProduct(WebDriver driver, WebElement element) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+
+	}
+
+	public void waitForElementOfclickOnSaveButtonOfManageNews(WebDriver driver, WebElement element) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+
+	}
 
 
 }

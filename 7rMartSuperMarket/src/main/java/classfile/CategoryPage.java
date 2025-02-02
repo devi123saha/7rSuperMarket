@@ -14,58 +14,85 @@ import utilities.WaitUtility;
 public class CategoryPage {
 	public WebDriver driver;
 	WaitUtility wait = new WaitUtility();
+
 	public CategoryPage(WebDriver driver) {
-	this.driver=driver;
-	PageFactory.initElements(driver, this);
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
 	}
+
+	@FindBy(xpath = "//a[@class='btn btn-rounded btn-danger']")
+	private WebElement newClick;
+	@FindBy(xpath = "//input[@type='text']")
+	private WebElement enterCategoryName;
+	@FindBy(xpath = "main_img")
+	private WebElement chooseFile;
+	@FindBy(xpath = "(//input[@type='radio'])[1]")
+	private WebElement radioButton1Select;
+	@FindBy(xpath = "(//input[@type='radio'])[3]")
+	private WebElement radioButton2Select;
+	@FindBy(xpath = "//button[@type='submit']")
+	private WebElement saveButton;
+	@FindBy(xpath = "(//a[@class='btn btn-sm btn btn-danger btncss'])[1]")
+	private WebElement deleteButton;
+	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
+	private WebElement deleteSuccess;
 	
-	 @FindBy(xpath="//a[@class='btn btn-rounded btn-danger']") private WebElement clickNew;
-	 @FindBy(xpath="//input[@id='category']") private WebElement enterCategoryName;
-	 @FindBy(xpath="//input[@id='main_img']") private WebElement clickFileUpload;
-	@FindBy(xpath="//input[@name='top_menu'][1]") private WebElement showOnTopMenu;
-	@FindBy(xpath="//input[@name='show_home'][1]") private WebElement  showOnleftMenu;
-	@FindBy(xpath="//button[@class='btn btn-danger']") private WebElement  clickSave;
-	 
+	
 	
 
+	public CategoryPage clickOnNewButton() {
+		newClick.click();
+		return this;
 
-
-
-
-	 public CategoryPage clickNew() {
-		 clickNew.click();
-		 return this;
 	}
-	 
-	 public CategoryPage enterCategoryName(String category) {
-		 enterCategoryName.sendKeys(category);
-		 return this;
-	 }
-    
-	 public CategoryPage clickFileUpload() throws AWTException {
-		 wait.waitForELementClick(driver, clickFileUpload);
-		 FileUploadUtility file = new FileUploadUtility();
-		 file.roboKeysForFileUpload(clickFileUpload, Constants.PDFFILE);
-		 return this;
-	 }
-	 
-	 public CategoryPage showOnTopMenu() {
-		 showOnTopMenu.click();
-		 return this;
-	 }
-      
-	 public CategoryPage showOnleftpMenu() {
-		 showOnleftMenu.click();
-		 return this;
-	 }
-	 public CategoryPage clickSave() {
-		 clickSave.click();
-		 return this;
-	 }
-	 
-	 
 
+	public CategoryPage enterCategoryNameOnField(String categoryName) {
+		enterCategoryName.sendKeys(categoryName);
+		return this;
 
+	}
 
+	public CategoryPage chooseFileClick() throws AWTException {
+		wait.waitForELementClick(driver, chooseFile);
+		FileUploadUtility file = new FileUploadUtility();
+		file.roboKeysForFileUpload(chooseFile, Constants.UPLOADFILEFORCATEGORY);
+		// chooseFile.click();
+		return this;
+	}
+
+	public CategoryPage radioSelectOfTopMenu() {
+		radioButton1Select.click();
+		return this;
+
+	}
+
+	public CategoryPage radioSelectOfSideMenu() {
+		radioButton2Select.click();
+		return this;
+
+	}
+
+	public CategoryPage saveButtonClick() {
+		saveButton.click();
+		return this;
+
+	}
+
+	public CategoryPage clickOnDeleteButton() {
+		deleteButton.click();
+		driver.switchTo().alert().accept();
+		return this;
+	}
+
+	public boolean isDeleteSuccessfulMessageDisplayed() {
+		return deleteSuccess.isDisplayed();
+
+	}
 
 }
+	 
+	 
+
+
+
+

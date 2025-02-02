@@ -26,6 +26,11 @@ public AdminUsersPage(WebDriver driver)	{
 @FindBy(xpath="(//select[@class='form-control'])[1]") private WebElement searchUsertype;
 @FindBy(xpath="(//button[@class='btn btn-block-sm btn-danger'])[1]") private WebElement userSearchButton;
 @FindBy(xpath="//div[@class='alert alert-success alert-dismissible']") private WebElement alert;
+@FindBy(xpath="(//i[@class='fas fa-edit'])[2]") private WebElement clickEditButton;
+@FindBy(xpath="(//i[@class='fas fa-edit'])[2]") private WebElement editUsernameField;
+@FindBy(xpath="(//i[@class='fas fa-edit'])[2]") private WebElement editPasswordField;
+@FindBy(xpath="(//i[@class='fas fa-edit'])[2]") private WebElement clickOnUpdateButton;
+@FindBy(xpath="(//i[@class='fas fa-edit'])[2]") private WebElement message;
 
 
 
@@ -59,6 +64,7 @@ public AdminUsersPage clickOnSearchButton() {
 	searchButton.click();
 	return this;
 }
+
 public AdminUsersPage enterNameOnSearchNameField(String searchName) {
 	searchuser.sendKeys(searchName);
 	return this;
@@ -77,4 +83,26 @@ public boolean isAlertDisplayed() {
 	
 }
 
+public AdminUsersPage clickEditButton() {
+	clickEditButton.click();
+	return this;
+}
+
+public AdminUsersPage editUsernameField(String newUsername) {
+	editUsernameField.sendKeys(newUsername);
+	return this;
+}
+
+public AdminUsersPage editPasswordField(String newPassword) {
+	editPasswordField.sendKeys(newPassword);
+	return this;
+}
+public AdminUsersPage clickOnUpdateButton() {
+	clickOnUpdateButton.click();
+	return this;
+}
+
+public boolean isEditSuccessfulMessageDisplayed() {
+	 return message.isDisplayed();
+}
 }

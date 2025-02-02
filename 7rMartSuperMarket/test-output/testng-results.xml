@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-21T21:13:45 IST" name="Default suite" finished-at="2025-01-21T21:14:19 IST" duration-ms="33204">
+  <suite started-at="2025-01-28T20:57:29 IST" name="Default suite" finished-at="2025-01-28T20:57:56 IST" duration-ms="26611">
     <groups>
     </groups>
-    <test started-at="2025-01-21T21:13:45 IST" name="Default test" finished-at="2025-01-21T21:14:19 IST" duration-ms="33204">
-      <class name="testfile.AdminUserTest">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:testfile.AdminUserTest@1573f9fc]" started-at="2025-01-21T21:13:45 IST" name="beforeMethod" finished-at="2025-01-21T21:14:09 IST" duration-ms="23681" status="PASS">
+    <test started-at="2025-01-28T20:57:29 IST" name="Default test" finished-at="2025-01-28T20:57:56 IST" duration-ms="26611">
+      <class name="testfile.CategoryTest">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:testfile.CategoryTest@6989da5e]" started-at="2025-01-28T20:57:29 IST" name="beforeMethod" finished-at="2025-01-28T20:57:50 IST" duration-ms="20757" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="newAdminUserCreation()[pri:0, instance:testfile.AdminUserTest@1573f9fc]" started-at="2025-01-21T21:14:09 IST" name="newAdminUserCreation" finished-at="2025-01-21T21:14:19 IST" duration-ms="9439" status="PASS">
+        <test-method signature="verifyNewCategoryCreaation()[pri:0, instance:testfile.CategoryTest@6989da5e]" started-at="2025-01-28T20:57:50 IST" name="verifyNewCategoryCreaation" finished-at="2025-01-28T20:57:56 IST" duration-ms="5776" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- newAdminUserCreation -->
-      </class> <!-- testfile.AdminUserTest -->
+        </test-method> <!-- verifyNewCategoryCreaation -->
+      </class> <!-- testfile.CategoryTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

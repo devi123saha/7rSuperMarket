@@ -1,5 +1,7 @@
 package testfile;
 
+import java.awt.AWTException;
+
 import org.testng.annotations.Test;
 
 import classfile.CategoryPage;
@@ -11,15 +13,15 @@ public class CategoryTest extends Base{
 	HomePage home;
 	CategoryPage category;
 	
-  @Test
+  @Test(retryAnalyzer = retry.Retry.class)
   
-  public void verifyNewCategoryCreaation(){
+  public void verifyNewCategoryCreaation() throws AWTException{
 	  LoginPage login = new LoginPage(driver);
 		login.enterUsernameOnField("admin").enterPasswordOnField("admin");
 		home = login.clickOnSignInButton();
 		category= home.categoryclick();
-		category.clickNew().enterCategoryName("Devika");
-		category.showOnTopMenu().showOnleftpMenu().clickSave();
+		category.chooseFileClick().enterCategoryNameOnField("Devika");
+		category.radioSelectOfTopMenu().radioSelectOfSideMenu().saveButtonClick();
 		
 		
 		

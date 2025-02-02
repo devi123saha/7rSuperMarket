@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import classfile.HomePage;
+import utilities.SubCategoryPage;
 
 public class HomePage {
 	public WebDriver driver;
@@ -19,7 +20,19 @@ public class HomePage {
 @FindBy(xpath="(//a[@class='small-box-footer'])[8]") private WebElement manageProductsClick;
 @FindBy(xpath="(//a[@class='small-box-footer'])[9]") private WebElement managenewsClick;
 @FindBy(xpath="(//a[@class='small-box-footer'])[3]") private WebElement categoryclick;
+@FindBy(xpath="(//a[@class='small-box-footer'])[3]") private WebElement clickOnSubCategoryButton;
+@FindBy(xpath="(//a[@class='small-box-footer'])[3]") private WebElement clickOnCategoryButton;
 
+
+public SubCategoryPage clickOnSubCategoryButton() {
+	clickOnSubCategoryButton.click();
+	return new SubCategoryPage(driver);
+}
+
+public CategoryPage clickOnCategoryButton() {
+	clickOnCategoryButton.click();
+	return new CategoryPage(driver);
+}
 
 public CategoryPage categoryclick() {
 	categoryclick.click();
@@ -50,12 +63,6 @@ public HomePage logout() {
 	logoutclick.click();
 	clickonlogoutbutton.click();
 	return this;
-
-
-
-
-
-
 }
 
 }
