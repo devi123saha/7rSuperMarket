@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Default test(failed)">
+<suite name="Failed suite [Grouping]" guice-stage="DEVELOPMENT">
+  <parameter name="browser" value="chrome"/>
+  <test thread-count="5" name="grouping.xml(failed)">
+    <groups>
+      <run>
+        <include name="smoke"/>
+      </run>
+    </groups>
     <classes>
-      <class name="testfile.ManageProductTest">
+      <class name="testfile.LoginTest">
         <methods>
+          <include name="verifyInvalidUsernameAndPassword"/>
+          <include name="verifyCorrectUsernameAndInvalidPassword"/>
           <include name="beforeMethod"/>
-          <include name="verifyValidProductSearch"/>
         </methods>
-      </class> <!-- testfile.ManageProductTest -->
+      </class> <!-- testfile.LoginTest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- grouping.xml(failed) -->
+</suite> <!-- Failed suite [Grouping] -->

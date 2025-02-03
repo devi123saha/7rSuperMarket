@@ -28,7 +28,7 @@ public FileInputStream fis;
 
 @Parameters("browser")
   
-  @BeforeMethod
+  @BeforeMethod(alwaysRun = true)
   public void beforeMethod(String browser) throws Exception {
 	try {
 		properties = new Properties();
