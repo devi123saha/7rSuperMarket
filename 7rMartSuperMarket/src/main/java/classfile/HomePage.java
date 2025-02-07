@@ -6,63 +6,70 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import classfile.HomePage;
-import utilities.SubCategoryPage;
 
 public class HomePage {
 	public WebDriver driver;
-	  public HomePage(WebDriver driver)	{
-		this.driver=driver;
+
+	public HomePage(WebDriver driver) {
+		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-@FindBy(xpath="(//a[@class='nav-link'])[2]") private WebElement  logoutclick;
-@FindBy(xpath="(//a[@class='dropdown-item'])[2]") private WebElement clickonlogoutbutton;
-@FindBy(xpath="(//a[@class='small-box-footer'])[1]") private WebElement adminUserClick;
-@FindBy(xpath="(//a[@class='small-box-footer'])[8]") private WebElement manageProductsClick;
-@FindBy(xpath="(//a[@class='small-box-footer'])[9]") private WebElement managenewsClick;
-@FindBy(xpath="(//a[@class='small-box-footer'])[3]") private WebElement categoryclick;
-@FindBy(xpath="(//a[@class='small-box-footer'])[3]") private WebElement clickOnSubCategoryButton;
-@FindBy(xpath="(//a[@class='small-box-footer'])[3]") private WebElement clickOnCategoryButton;
 
+	@FindBy(xpath = "(//a[@class='nav-link'])[2]")
+	private WebElement logoutclick;
+	@FindBy(xpath = "(//a[@class='dropdown-item'])[2]")
+	private WebElement clickonlogoutbutton;
+	@FindBy(xpath = "(//a[@class='small-box-footer'])[1]")
+	private WebElement adminUserClick;
+	@FindBy(xpath = "(//a[@class='small-box-footer'])[8]")
+	private WebElement manageProductsClick;
+	@FindBy(xpath = "(//a[@class='small-box-footer'])[9]")
+	private WebElement managenewsClick;
+	@FindBy(xpath = "(//a[@class='small-box-footer'])[3]")
+	private WebElement categoryclick;
+	@FindBy(xpath = "(//a[@class='small-box-footer'])[3]")
+	private WebElement clickOnSubCategoryButton;
+	@FindBy(xpath = "(//a[@class='small-box-footer'])[3]")
+	private WebElement clickOnCategoryButton;
 
-public SubCategoryPage clickOnSubCategoryButton() {
-	clickOnSubCategoryButton.click();
-	return new SubCategoryPage(driver);
-}
+	public SubCategoryPage clickOnSubCategoryButton() {
+		clickOnSubCategoryButton.click();
+		return new SubCategoryPage(driver);
+	}
 
-public CategoryPage clickOnCategoryButton() {
-	clickOnCategoryButton.click();
-	return new CategoryPage(driver);
-}
+	public CategoryPage clickOnCategoryButton() {
+		clickOnCategoryButton.click();
+		return new CategoryPage(driver);
+	}
 
-public CategoryPage categoryclick() {
-	categoryclick.click();
-	return new CategoryPage(driver);
-}
+	public CategoryPage categoryclick() {
+		categoryclick.click();
+		return new CategoryPage(driver);
+	}
 
+	public AdminUsersPage adminsUserClick() {
+		adminUserClick.click();
+		return new AdminUsersPage(driver);
 
-public AdminUsersPage adminsUserClick() {
-	adminUserClick.click();
-	return new AdminUsersPage(driver);
-	
-}
+	}
 
-public ManageProduct manageProductClick() {
-	
-	manageProductsClick.click();
-	return new ManageProduct(driver);
-}
+	public ManageProduct manageProductClick() {
 
-public ManageNews clickOnManageNews() {
-	
-	managenewsClick.click();
-	return new ManageNews(driver);
-	
-}
+		manageProductsClick.click();
+		return new ManageProduct(driver);
+	}
 
-public HomePage logout() {
-	logoutclick.click();
-	clickonlogoutbutton.click();
-	return this;
-}
+	public ManageNews clickOnManageNews() {
+
+		managenewsClick.click();
+		return new ManageNews(driver);
+
+	}
+
+	public HomePage logout() {
+		logoutclick.click();
+		clickonlogoutbutton.click();
+		return this;
+	}
 
 }

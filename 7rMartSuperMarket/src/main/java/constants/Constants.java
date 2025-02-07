@@ -21,10 +21,7 @@ public class Constants {
 
 	public static final String PDFFILE = System.getProperty("user.dir")
 			+ "\\src\\test\\resources\\Intermediate Batch Attendence.pdf";
-	
-	public static final String CONFIGFILE = System.getProperty("user.dir")
-			+ "\\src\\main\\java\\config.properties";
-	
-	
+
+	public static final String CONFIGFILE = System.getProperty("user.dir") + "\\src\\main\\java\\config.properties";
 
 }

@@ -36,9 +36,6 @@ public class CategoryPage {
 	private WebElement deleteButton;
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
 	private WebElement deleteSuccess;
-	
-	
-	
 
 	public CategoryPage clickOnNewButton() {
 		newClick.click();
@@ -90,9 +87,3 @@ public class CategoryPage {
 	}
 
 }
-	 
-	 
-
-
-
-

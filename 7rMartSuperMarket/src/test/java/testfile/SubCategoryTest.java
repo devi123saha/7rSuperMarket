@@ -1,21 +1,19 @@
 package testfile;
 
-
 import java.awt.AWTException;
 import java.io.IOException;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-
 import constants.Constants;
 import classfile.AdminUsersPage;
 import classfile.CategoryPage;
 import classfile.HomePage;
 import classfile.LoginPage;
+import classfile.SubCategoryPage;
 import utilities.ExcelUtility;
 import utilities.FakerUtility;
-import utilities.SubCategoryPage;
 
 public class SubCategoryTest extends Base {
 	HomePage home;
@@ -54,7 +52,7 @@ public class SubCategoryTest extends Base {
 		boolean statusMessage = subcategory.isactivestatusdisplayed();
 		Assert.assertTrue(statusMessage, Constants.ERRORMESSAGEFORINVALIDSUBCATEGORYSEARCH);
 	}
-	
+
 	public void verifyUserIsAbleToDeleteCategory() throws IOException {
 		LoginPage login = new LoginPage(driver);
 		String username = ExcelUtility.readStringData(3, 0, "LoginPage");
@@ -66,7 +64,5 @@ public class SubCategoryTest extends Base {
 		boolean deleteMessage = category.isDeleteSuccessfulMessageDisplayed();
 		Assert.assertTrue(deleteMessage, Constants.SUBCATEGORYDELETIONUNSUCCESSFUL);
 	}
-	
-	
-	
+
 }

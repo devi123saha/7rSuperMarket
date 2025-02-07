@@ -9,13 +9,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WaitUtility {
 	public WebDriver driver;
-	
+
 	public void waitForELementClick(WebDriver driver, WebElement element) {
-		
-		WebDriverWait wait =  new WebDriverWait(driver,Duration.ofSeconds(20));
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		wait.until(ExpectedConditions.elementToBeClickable(element));
-		
+
 	}
+
 	public void waitForElementToClickonSaveButton(WebDriver driver, WebElement element) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.elementToBeClickable(element));
@@ -39,6 +40,5 @@ public class WaitUtility {
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 
 	}
-
 
 }
