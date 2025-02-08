@@ -2,6 +2,7 @@ package testfile;
 
 import java.awt.AWTException;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import classfile.CategoryPage;
@@ -22,6 +23,7 @@ public class CategoryTest extends Base {
 		category = home.categoryclick();
 		category.chooseFileClick().enterCategoryNameOnField("Devika");
 		category.radioSelectOfTopMenu().radioSelectOfSideMenu().saveButtonClick();
+		
 
 	}
 }
