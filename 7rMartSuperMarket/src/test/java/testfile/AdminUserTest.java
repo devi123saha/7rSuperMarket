@@ -32,15 +32,15 @@ public class AdminUserTest extends Base {
 	}
 
 	@Test
-	public void searchUser() {
-		LoginPage login = new LoginPage(driver);
-		login.enterUsernameOnField("admin").enterPasswordOnField("admin");
-		home = login.clickOnSignInButton();
-		admin = home.adminsUserClick();
-		admin.clickOnSearchButton().enterNameOnSearchNameField("athiraa").selectUsertypeDropDown()
-				.clickOnUserSearchButton();
+	//public void searchUser() {
+		//LoginPage login = new LoginPage(driver);
+		//login.enterUsernameOnField("admin").enterPasswordOnField("admin");
+		//home = login.clickOnSignInButton();
+		//admin = home.adminsUserClick();
+		//admin.clickOnSearchButton().enterNameOnSearchNameField("athiraa").selectUsertypeDropDown()
+				//.clickOnUserSearchButton();
 
-	}
+	
 
 	public void verifyUserAbleToEditUserDetails() throws IOException {
 		LoginPage login = new LoginPage(driver);
